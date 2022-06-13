@@ -51,4 +51,19 @@ public class otherTest {
 
     }
 
+    @Test
+
+    public void alertTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/");
+        WebElement jsAlertsLink = driver.findElement(By.xpath("//a[text()='JavaScript Alerts']"));
+        jsAlertsLink.click();
+        WebElement jsAlertButtonLink = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
+        jsAlertButtonLink.click();
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+        driver.quit();
+    }
+
+
 }

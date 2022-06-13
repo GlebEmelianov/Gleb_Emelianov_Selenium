@@ -1,16 +1,19 @@
 package pageobject.base;
 
+import helpers.ScreenshotListeners;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
+@Listeners(ScreenshotListeners.class)
 public class testBase {
 
     protected WebDriver driver;
 
     @BeforeMethod
-    public void sutup() {
+    public void setup() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -19,6 +22,11 @@ public class testBase {
 
     @AfterMethod
     public void teardown() {
-        driver.quit();
+        if (driver!=null) {
+            driver.quit();
+            driver=null;
+        }
+
+
     }
 }

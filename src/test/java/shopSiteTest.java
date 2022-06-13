@@ -1,3 +1,4 @@
+import helpers.ScreenshotListeners;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,10 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import java.util.List;
-
 
 public class shopSiteTest {
 
@@ -76,17 +75,4 @@ public class shopSiteTest {
         driver.quit();
     }
 
-    @Test
-
-    public void alertTest() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
-        WebElement jsAlertsLink = driver.findElement(By.xpath("//a[text()='JavaScript Alerts']"));
-        jsAlertsLink.click();
-        WebElement jsAlertButtonLink = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
-        jsAlertButtonLink.click();
-        Alert alert = driver.switchTo().alert();
-        alert.dismiss();
-        driver.quit();
-    }
 }

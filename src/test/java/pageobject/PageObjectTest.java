@@ -1,7 +1,10 @@
 package pageobject;
 
+import helpers.ScreenshotListeners;
+import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobject.base.testBase;
 import pageobject.objectmethod.homePage;
@@ -12,6 +15,7 @@ import pageobject.staticmethod.*;
 public class PageObjectTest extends testBase {
 
     @Test
+    @Description("Impossible to log in with invalid credentials")
     public void loginTest() {
 
         loginPage LoginPage = new loginPage(driver);
@@ -23,6 +27,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Home page button in header menu test")
     public void headerMenuHomePageButtonTest() {
 
         homePageButton.clickHomePageButton(driver);
@@ -32,6 +37,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Test of button without name in header menu")
     public void headerMenuNamelessButtonTest() {
 
         namelessButton.clickNamelessButton(driver);
@@ -41,6 +47,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Rubber ducks button in header menu test")
     public void headerMenuRubberDucksButtonTest() {
 
         rubberDucksButton.clickRubberDucksButton(driver);
@@ -50,6 +57,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Delivery button ib header menu test")
     public void headerMenuDeliveryInformationButtonTest() {
 
         deliveryInformationButton.clickDeliveryInformationButton(driver);
@@ -59,6 +67,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Terms and conditiones button in header menu test")
     public void headerMenuTermsConditionsButtonTest() {
 
         termsConditionsButton.clickTermsConditionsButton(driver);
@@ -68,6 +77,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Discount button in header menu test")
     public void headerMenuDiscountButtonTest() {
 
         discountButton.clickDiscountButton(driver);
@@ -77,6 +87,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
+    @Description("Checkout button test")
     public void checkoutButtonTest() {
 
         checkoutButton checkoutButtonLink = PageFactory.initElements(driver, checkoutButton.class);
