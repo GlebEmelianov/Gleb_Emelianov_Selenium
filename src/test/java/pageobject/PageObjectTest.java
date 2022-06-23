@@ -1,12 +1,10 @@
 package pageobject;
 
-import helpers.ScreenshotListeners;
 import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageobject.base.testBase;
+import base.testBase;
 import pageobject.objectmethod.homePage;
 import pageobject.objectmethod.loginPage;
 import pageobject.pagefactorymethod.checkoutButton;
@@ -57,7 +55,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
-    @Description("Delivery button ib header menu test")
+    @Description("Delivery button in header menu test")
     public void headerMenuDeliveryInformationButtonTest() {
 
         deliveryInformationButton.clickDeliveryInformationButton(driver);
@@ -67,7 +65,7 @@ public class PageObjectTest extends testBase {
     }
 
     @Test
-    @Description("Terms and conditiones button in header menu test")
+    @Description("Terms and conditions button in header menu test")
     public void headerMenuTermsConditionsButtonTest() {
 
         termsConditionsButton.clickTermsConditionsButton(driver);

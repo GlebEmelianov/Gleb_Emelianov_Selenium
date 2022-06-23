@@ -1,11 +1,12 @@
+package otherTests;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class otherTest {
+public class theInternetTests {
     @Test
-
     public void frameTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/nested_frames");
@@ -17,7 +18,6 @@ public class otherTest {
     }
 
     @Test
-
     public void tabTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/windows");
@@ -31,28 +31,25 @@ public class otherTest {
     }
 
     @Test
-
     public void shadowDomTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/shadowdom");
         WebElement rootElement = driver.findElement(By.tagName("my-paragraph"));
         SearchContext shadowRoot = (SearchContext) ((JavascriptExecutor)driver).executeScript("return arguments[0].shadowRoot", rootElement);
         WebElement slot = shadowRoot.findElement(By.cssSelector("slot[name='my-text']"));
+        String slotText = slot.getText();
     }
 
     @Test
-
     public void webStorageTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://mdn.github.io/dom-examples/web-storage/");
-        WebElement select = driver.findElement(By.xpath("//select[@id='image']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("onclick", select);
-
+        js.executeScript("localStorage.font = 'Monospace'");
+        //reboot page in browser manually
     }
 
     @Test
-
     public void alertTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
@@ -64,6 +61,4 @@ public class otherTest {
         alert.dismiss();
         driver.quit();
     }
-
-
 }
