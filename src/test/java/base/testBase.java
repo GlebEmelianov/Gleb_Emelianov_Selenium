@@ -2,6 +2,7 @@ package base;
 
 import helpers.Browsers;
 import helpers.ScreenshotListener;
+import helpers.WebDriverContainer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,22 +19,8 @@ public class testBase {
     @BeforeMethod
     public void setup() {
 
-        Browsers browser = Browsers.valueOf(System.getProperty("browser", "chrome"));
-
-        switch (browser) {
-            case chrome: driver = new ChromeDriver(); break;
-            case firefox: driver = new FirefoxDriver(); break;
-            case opera: driver = new OperaDriver(); break;
-            case safari: driver = new SafariDriver(); break;
-            case ie: driver = new InternetExplorerDriver(); break;
-        }
-
-        driver.manage().window().maximize();
+        driver= WebDriverContainer.getDriver();
         driver.get("https://litecart.stqa.ru/en/");
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
+        driver.manage().window().maximize();
     }
 }

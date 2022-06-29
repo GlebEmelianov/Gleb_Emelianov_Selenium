@@ -1,12 +1,14 @@
 package rubberDucksTests;
 
 import base.testBase;
+import helpers.ScreenshotListener;
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobject.objectmethod.homePage;
 import pageobject.objectmethod.loginPage;
@@ -100,7 +102,7 @@ public class rubberDucksTests extends testBase {
         WebElement greenDuckPicture = driver.findElement(By.xpath("//img[@alt='Green DucK']"));
         WebElement labelNew = driver.findElement(By.xpath("//img[@alt='Green DucK']/following-sibling::div"));
         Assert.assertTrue(greenDuckPicture.getAttribute("alt").equals("Green DucK") &&
-                labelNew.getAttribute("title").equals("New"), "Green duck doesn`t have label New");
+                labelNew.getAttribute("title").equals("New"), "The label at Green duck picture is not New");
     }
 
     @Test
@@ -109,7 +111,7 @@ public class rubberDucksTests extends testBase {
         WebElement redDuckPicture = driver.findElement(By.xpath("//img[@alt='Red Duck']"));
         WebElement labelNew = driver.findElement(By.xpath("//img[@alt='Red Duck']/following-sibling::div"));
         Assert.assertTrue(redDuckPicture.getAttribute("alt").equals("Red Duck") &&
-                labelNew.getAttribute("title").equals("New"), "Red duck doesn`t have label New");
+                labelNew.getAttribute("title").equals("New"), "The label at Red duck picture is not New");
     }
 
     @Test
@@ -118,7 +120,7 @@ public class rubberDucksTests extends testBase {
         WebElement yellowDuckPicture = driver.findElement(By.xpath("//img[@alt='Yellow Duck']"));
         WebElement labelSale = driver.findElement(By.xpath("//img[@alt='Yellow Duck']/following-sibling::div"));
         Assert.assertTrue(yellowDuckPicture.getAttribute("alt").equals("Yellow Duck") &&
-                labelSale.getAttribute("title").equals("On Sale"), "Yellow duck doesn`t have label On sale");
+                labelSale.getAttribute("title").equals("On Sale"), "The label at Yellow duck picture is not On sale");
     }
 
     @Test
