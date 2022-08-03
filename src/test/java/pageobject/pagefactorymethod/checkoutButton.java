@@ -3,7 +3,6 @@ package pageobject.pagefactorymethod;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static helpers.Locators.getLocator;
 
 public class checkoutButton {
 

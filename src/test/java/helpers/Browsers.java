@@ -9,11 +9,13 @@ public enum Browsers {
         ie("internet explorer");
         String browserName;
         Browsers(String browserName) {
-            this.browserName = browserName; }
+            this.browserName = browserName;
+        }
 
 
     public String getBrowserName() {
-            return browserName; }
+            return browserName;
+        }
 
     public static Browsers getEnumByLabel(String label) {
         for(Browsers browser : values()) {

@@ -3,7 +3,6 @@ package pageobject.objectmethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static helpers.Locators.getLocator;
 
 
 public class loginPage {
