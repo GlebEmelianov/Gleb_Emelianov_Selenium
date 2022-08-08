@@ -6,15 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 @Listeners(ScreenshotListener.class)
-public class testBase {
+public class TestBase {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     @BeforeMethod
     public void setup() {
 
-        driver= WebDriverContainer.getDriver();
+        driver = WebDriverContainer.getDriver();
         driver.get("https://litecart.stqa.ru/en/");
         driver.manage().window().maximize();
     }
 }
+
+

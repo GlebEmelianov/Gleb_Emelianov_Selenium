@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import java.util.List;
 
-public class linkTest extends WebDriverContainer {
+public class LinkTest extends WebDriverContainer {
 
     public WebDriver driver;
 

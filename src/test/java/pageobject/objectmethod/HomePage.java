@@ -6,13 +6,13 @@ import org.openqa.selenium.By;
 
 
 
-public class homePage  {
+public class HomePage  {
 
     private By messageAfterUnsuccessfulLogin = By.cssSelector(".notice.errors");
 
     private WebDriver driver;
 
-    public homePage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 

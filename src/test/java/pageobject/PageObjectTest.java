@@ -4,22 +4,22 @@ import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import base.testBase;
-import pageobject.objectmethod.homePage;
-import pageobject.objectmethod.loginPage;
-import pageobject.pagefactorymethod.checkoutButton;
+import base.TestBase;
+import pageobject.objectmethod.HomePage;
+import pageobject.objectmethod.LoginPage;
+import pageobject.pagefactorymethod.CheckoutButton;
 import pageobject.staticmethod.*;
 
-public class PageObjectTest extends testBase {
+public class PageObjectTest extends TestBase {
 
     @Test
     @Description("Impossible to log in with invalid credentials")
     public void loginTest() {
 
-        loginPage LoginPage = new loginPage(driver);
+        LoginPage LoginPage = new LoginPage(driver);
         LoginPage.loginWithIncorrectCredentialsTest("gleb@gmail.com", "Test1234!");
 
-        homePage HomePage = new homePage(driver);
+        HomePage HomePage = new HomePage(driver);
         Assert.assertTrue(HomePage.unsuccessfulMassageIsVisible(), "Login with incorrect credentials is successful");
 
     }
@@ -88,7 +88,7 @@ public class PageObjectTest extends testBase {
     @Description("Checkout button test")
     public void checkoutButtonTest() {
 
-        checkoutButton checkoutButtonLink = PageFactory.initElements(driver, checkoutButton.class);
+        CheckoutButton checkoutButtonLink = PageFactory.initElements(driver, CheckoutButton.class);
         checkoutButtonLink.clickCheckoutButton();
 
         String actualTitleOfCheckoutPage = driver.getTitle();
